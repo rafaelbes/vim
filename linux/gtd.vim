@@ -3,28 +3,31 @@ if exists("b:current_syntax")
   finish
 endif
 
-syntax region topicoAcao oneline start='ação:' end='$'
-syntax region topicoArquivo oneline start='\[' end='\]'
-syntax region topicoComentario oneline start='comentário:' end='$'
-syntax region topicoInfo oneline start='informação:' end='$'
-syntax region topicoDecisao oneline start='decisão:' end='$'
-syntax region topicoDuvida oneline start='dúvida:' end='$'
-syntax region topicoAguardo oneline start='aguardo:' end='$'
-syntax region topicoFazer oneline start='fazer:' end='$'
-syntax region topicoProjetoInativo oneline start='!' end='$'
-syntax region topicoTopico oneline start='#' end='$'
-syntax region topicoOpcao oneline start='opção:' end='$'
+syntax match tAcao 'ação [A-Z0-9]*:'
+syntax match tAcao 'ação:'
+syntax region tProjetoAtivo oneline start='projeto:' end='$'
+syntax region tProjetoInativo oneline start='!projeto:' end='$'
+syntax region tComentario oneline start='comentário:' end='$'
+syntax region tInfo oneline start='informação:' end='$'
+syntax region tDecisao oneline start='decisão:' end='$'
+syntax region tDuvida oneline start='dúvida:' end='$'
+syntax region tAguardo oneline start='aguardo:' end='$'
+syntax match tRefinar 'refinar'
+syntax match tUrgente 'urgente'
+syntax region tT oneline start='#' end='$'
+syntax region tOpcao oneline start='opção:' end='$'
 
-hi def link topicoAcao Character
-hi def link topicoArquivo Boolean
-hi def link topicoComentario Number
-hi def link topicoInfo Float
-hi def link topicoDecisao Identifier
-hi def link topicoDuvida Statement
-hi def link topicoAguardo Label
-hi def link topicoFazer Type
-hi def link topicoProjetoInativo Comment
-hi def link topicoTopico Operator
-hi def link topicoOpcao PreProc
+hi def link tAcao Character
+hi def link tProjetoAtivo Boolean
+hi def link tProjetoInativo Type
+hi def link tComentario Number
+hi def link tInfo Float
+hi def link tDecisao Identifier
+hi def link tDuvida Statement
+hi def link tAguardo Label
+hi def link tRefinar Comment
+hi def link tUrgente Exception
+hi def link tT Operator
+hi def link tOpcao PreProc
 
 let b:current_syntax = "gtd"

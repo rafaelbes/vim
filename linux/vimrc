@@ -14,7 +14,9 @@ nnoremap <C-Up> <Up>ddp<Up>
 nnoremap <C-Down> ddp
 highlight LineNr ctermfg=grey
 au BufNewFile *.c r ~/.vim/template.c
+au BufNewFile *.cpp r ~/.vim/template.cpp
 colorscheme seoul256
+let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
 
 call plug#begin('~/.vim/plugged')
@@ -25,36 +27,32 @@ Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
 call plug#end()
 
-autocmd VimEnter * NERDTree | wincmd p
+"autocmd VimEnter * NERDTree | wincmd p
 set clipboard=unnamedplus
 au VimEnter * if &diff | execute 'windo set wrap' | endif
 "noremap gf :e <cfile><cr>
 
 au BufRead,BufNewFile *.gtd set filetype=gtd
-"acao
-au BufEnter *.gtd hi Character ctermfg=black ctermbg=white
-"link
-au BufEnter *.gtd hi Boolean ctermfg=220
-"comentario
-au BufEnter *.gtd hi Number ctermfg=lightyellow
-"informacao
-au BufEnter *.gtd hi Float ctermfg=lightgreen
-"decisao
-au BufEnter *.gtd hi Identifier ctermfg=lightred
-"duvida
-au BufEnter *.gtd hi Statement ctermfg=lightblue gui=none
-"aguardo
-au BufEnter *.gtd hi Label ctermfg=lightcyan
-"fazer
-au BufEnter *.gtd hi Type ctermfg=white ctermbg=grey gui=none
-"!
-au BufEnter *.gtd hi Comment ctermfg=grey
-"#
-au BufEnter *.gtd hi Operator ctermfg=white ctermbg=blue
-"PreProc
-au BufEnter *.gtd hi PreProc ctermfg=blue
+au BufEnter *.gtd hi Constant ctermfg=15 ctermbg=28
+au BufEnter *.gtd hi String ctermfg=15 ctermbg=22
+au BufEnter *.gtd hi Character ctermfg=15 ctermbg=4
+au BufEnter *.gtd hi Number ctermfg=0 ctermbg=220
+au BufEnter *.gtd hi Boolean ctermbg=29 ctermfg=15
+au BufEnter *.gtd hi Comment ctermfg=0 ctermbg=15
+au BufEnter *.gtd hi Float ctermfg=0 ctermbg=251
+au BufEnter *.gtd hi Identifier ctermfg=0 ctermbg=216
+au BufEnter *.gtd hi Function ctermfg=15 ctermbg=203
+au BufEnter *.gtd hi Statement ctermfg=15 ctermbg=61
+au BufEnter *.gtd hi Conditional ctermfg=243 ctermbg=237
+au BufEnter *.gtd hi Repeat ctermfg=15 ctermbg=160 cterm=bold
+au BufEnter *.gtd hi Label ctermfg=15 ctermbg=8
+au BufEnter *.gtd hi Operator ctermfg=0 ctermbg=152
+au BufEnter *.gtd hi Exception ctermfg=15 ctermbg=1
+au BufEnter *.gtd hi PreProc ctermfg=15 ctermbg=203
+au BufEnter *.gtd hi Type ctermfg=15 ctermbg=8
+au BufEnter *.gtd hi StorageClass ctermfg=0 ctermbg=7 cterm=bold
+au BufEnter *.gtd hi Structure ctermfg=15 ctermbg=112 cterm=bold
 noremap gf :e <cfile><cr>
-
 au BufRead,BufNewFile *.ref set filetype=ref
 au BufEnter *.ref hi Constant ctermfg=15 ctermbg=28
 au BufEnter *.ref hi String ctermfg=0 ctermbg=251
