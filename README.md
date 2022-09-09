@@ -5,7 +5,9 @@
 No arquivo de sintaxe:
 
 syntax keyword TIPO exprKeyword
+
 syntax region TIPO oneline start='\[' end='\]'
+
 syntax match TIPO 'exprMatch'
 
 hi def link TIPO (Character|Boolean|Number...)
